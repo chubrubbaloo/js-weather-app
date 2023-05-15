@@ -3,8 +3,8 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 
 const updateUI = (data) => {
-    const cityDetails = data.cityDetails;
-    const weather = data.weather;
+
+    const {cityDetails, weather} = data;
 
     // update details template
     details.innerHTML = `
@@ -12,7 +12,7 @@ const updateUI = (data) => {
     <div class="my-3">${weather.WeatherText}</div>
     <div class="display-4 my-4">
       <span>temp</span>
-      <span>${weather.Temperature.Metric.UnitType}C</span>
+      <span>${weather.Temperature.Metric.Value}C</span>
     </div>
     `;
 
