@@ -10,19 +10,14 @@ const updateUI = (data) => {
 
     // update details template
     details.innerHTML = `
-    <div class="my-3">Region: ${cityDetails.Region.EnglishName}</div>
-    <div class="my-3">Country: ${cityDetails.Country.EnglishName}</div>
-    <div class="my-3">City: ${cityDetails.EnglishName}</div>
-    <div class="my-3">Condition: ${weather.WeatherText}</div>
-    <div class="my-4">
-      <span>Temperature</span>
-      <br>
-      <span>Metric: ${weather.Temperature.Metric.Value}C</span>
-      <br>
-      <span>Freedom Units: ${weather.Temperature.Imperial.Value}F</span>
-    </div>
+    <div class="my-3"><ul>Region: ${cityDetails.Region.EnglishName}</ul></div>
+    <div class="my-3"><ul>Country: ${cityDetails.Country.EnglishName}</ul></div>
+    <div class="my-3"><ul>City: ${cityDetails.EnglishName}</ul></div>
+    <div class="my-3"><ul>Condition: ${weather.WeatherText}</ul></div>
+    <div class="my-3"><ul>
+      Temperature: ${weather.Temperature.Metric.Value}° C / ${weather.Temperature.Imperial.Value}° F 
+      </ul></div>
     `;
-
 
     // Update night/day & icon images.
     const iconSource = `img/icons/${weather.WeatherIcon}.svg`
