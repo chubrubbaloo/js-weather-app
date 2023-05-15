@@ -25,11 +25,3 @@ const getCity = async (city) => {
 
     return data[0];
 };
-
-"308409";
-
-
-
-
-
-

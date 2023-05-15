@@ -9,27 +9,33 @@
      <title>Weather App</title>
 </head>
 <body>
-    <div class="container my-5 mx-auto">
+    <div class="container my-1 mx-auto">
 
-        <h1 class="text-muted text-center my-4">VÄDER-APPEN</h1>
+        <h1 class="text-muted text-center my-4">The Weather App</h1>
     
         <form class="change-location my-4 text-center text-muted">
-          <label for="city">Stad</label>
-          <input type="text" name="city" class="form-control p-4">
+          <label for="city">City</label>
+          <input type="text" name="city" class="form-control p-2" placeholder="Stockholm...">
         </form>
-        
+
+        <!-- this div should contain d-none -->
         <div class="card shadow-lg rounded d-none">
           <img src="" class="time card-img-top">
           <div class="icon bg-light mx-auto text-center">
-            <!-- icon here later -->
+            <!-- Weather condition icon goes here -->
             <img src="" alt="">
+            <!-- Weather condition icon goes here -->
           </div>
-          <div class="text-muted text-uppercase text-center details">
-            <h5 class="my-3">Stad</h5>
-            <div class="my-3">Tillstånd</div>
+          <div class="text-muted text-uppercase text-left details">
+            <div class="my-3">Country</div>
+            <div class="my-3">City</div>
+            <div class="my-3">Weather Condition</div>
             <div class="display-4 my-4">
               <span>temp</span>
               <span>&deg;C</span>
+              <br>
+              <br>
+              <span>&deg;F</span>
             </div>
           </div>
         </div>

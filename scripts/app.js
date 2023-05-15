@@ -10,11 +10,16 @@ const updateUI = (data) => {
 
     // update details template
     details.innerHTML = `
-    <h5 class="my-3">${cityDetails.EnglishName}</h5>
-    <div class="my-3">${weather.WeatherText}</div>
-    <div class="display-4 my-4">
-      <span>temp</span>
-      <span>${weather.Temperature.Metric.Value}C</span>
+    <div class="my-3">Region: ${cityDetails.Region.EnglishName}</div>
+    <div class="my-3">Country: ${cityDetails.Country.EnglishName}</div>
+    <div class="my-3">City: ${cityDetails.EnglishName}</div>
+    <div class="my-3">Condition: ${weather.WeatherText}</div>
+    <div class="my-4">
+      <span>Temperature</span>
+      <br>
+      <span>Metric: ${weather.Temperature.Metric.Value}C</span>
+      <br>
+      <span>Freedom Units: ${weather.Temperature.Imperial.Value}F</span>
     </div>
     `;
 
@@ -24,13 +29,7 @@ const updateUI = (data) => {
     icon.setAttribute('src', iconSource);
 
     let timeSource = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
-
-    // if(weather.IsDayTime){
-    //     timeSource = 'img/day.svg';
-    // } else {
-    //     timeSource = 'img/night.svg';
-    // }
-    
+   
     time.setAttribute('src', timeSource);
 
     if(card.classList.contains('d-none')){
@@ -44,8 +43,6 @@ const updateCity = async (city) => {
     const weather = await getWeather(cityDetails.Key);
 
     return {
-        // cityDetails: cityDetails,
-        // weather: weather
         cityDetails,
         weather
     };
@@ -56,13 +53,12 @@ cityForm.addEventListener('submit', e => {
 
     e.preventDefault();
 
-    // get city value
+    // Get city value and trim white space from both ends of the input
     const city = cityForm.city.value.trim();
     cityForm.reset();
 
-    // update the UI with the new city
+    // Update the UI with the new city
     updateCity(city)
         .then(data =>  updateUI(data))
         .catch(error => console.log(error.message));
-
 });
