@@ -13,9 +13,9 @@ body{
   }
 
   .time{
+    border-bottom: 2px solid black;
     height: 350px;
     object-fit: cover;
-    border: 2px solid red;
   }
 
   .icon{
