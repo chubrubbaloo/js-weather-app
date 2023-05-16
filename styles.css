@@ -7,9 +7,20 @@ body{
     max-width: 400px;
   }
 
+  .card{
+    border: 2px solid black;
+  }
+
+  .time{
+    height: 350px;
+    object-fit: cover;
+    border: 2px solid red;
+  }
+
   .icon{
-    position: relative;
+    border: 2px solid black;
     top: -50px;
+    position: relative;
     border-radius: 50px;
     width: 150px;
     margin-bottom: -50px;
