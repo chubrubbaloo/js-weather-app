@@ -1,10 +1,11 @@
 body{
-    background: #eeedec;
-    letter-spacing: 0.2em;
-    font-size: 0.8em;
+    background: #eee;
+    letter-spacing: 0.1em;
+    font-size: 0.7em;
+    font-family: 'Poppins', sans-serif;
   }
   .container{
-    max-width: 400px;
+    max-width: 500px;
   }
 
   .card{
@@ -22,7 +23,7 @@ body{
     top: -50px;
     position: relative;
     border-radius: 50px;
-    width: 150px;
+    width: 50%;
     margin-bottom: -50px;
   }
 
