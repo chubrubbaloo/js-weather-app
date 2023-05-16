@@ -3,7 +3,7 @@
 https://baloo-weather-app.netlify.app/
 <hr>
 <p align="center">
-<img width="489" alt="image" src="https://github.com/chubrubbaloo/js-weather-app/assets/71407043/3eb2d780-cdf4-431b-870e-06b2236f2e6b">
+<img width="433" alt="image" src="https://github.com/chubrubbaloo/js-weather-app/assets/71407043/f02c27cf-6c71-4e81-8fb0-4c9f14af4f39">
 </p>
 
 <h3>API</h3>
