@@ -3,10 +3,31 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
+const errorMessage = document.querySelector('.error-message');
+const modal = document.getElementById("myModal");
+const closeButton = document.getElementsByClassName("close")[0];
+
+const displayErrorMessage = (city) => {
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', e => {
+        if (e.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    errorMessage.innerHTML =
+        `Could not fetch the data for the city [${city}]. Are you sure you spelled the city correctly?`;
+    modal.style.display = "block";
+};
+
 
 const updateUI = (data) => {
 
-    const {cityDetails, weather} = data;
+    const { cityDetails, weather } = data;
 
     // update details template
     details.innerHTML = `
@@ -24,10 +45,10 @@ const updateUI = (data) => {
     icon.setAttribute('src', iconSource);
 
     let timeSource = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
-   
+
     time.setAttribute('src', timeSource);
 
-    if(card.classList.contains('d-none')){
+    if (card.classList.contains('d-none')) {
         card.classList.remove('d-none');
     }
 };
@@ -54,6 +75,10 @@ cityForm.addEventListener('submit', e => {
 
     // Update the UI with the new city
     updateCity(city)
-        .then(data =>  updateUI(data))
-        .catch(error => console.log(error.message));
+        .then(data => updateUI(data))
+        .catch(() => {
+            displayErrorMessage(city);
+        });
 });
+
+
