@@ -12,7 +12,7 @@ https://baloo-weather-app.netlify.app/
 
 <h3>Paket och bibliotek</h3>
 <ul>
-<li>Bootstrap</li>
+  <li> <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
 </ul>
 <hr>
 <h3>Mål & personliga tankar</h3>
